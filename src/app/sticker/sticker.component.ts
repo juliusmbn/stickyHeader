@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef, ComponentFactoryResolver, AfterViewInit, HostListener } from '@angular/core';
 import { EmployeeService } from './employee.service';
 import { Employee } from './employee';
-
+import { Observable }        from 'rxjs/Observable';
 @Component({
   selector: 'app-sticker',
   templateUrl: './sticker.component.html',
@@ -30,17 +30,29 @@ export class StickerComponent implements OnInit {
 
 
     getEmployees(): void {
-      this.employees = this.employeeService.getEmployees();
+      this.employeeService.getEmployees().subscribe(
+        employees => this.employees = employees,
+ 
+      );
     }
     ngOnInit(){
        this.getEmployees();
+      
+    }
+
+    fixTable(){
+      this.header.createEmbeddedView(this.template);
+      this.body.createEmbeddedView(this.template); 
     }
 
     ngAfterViewInit(){
-      this.header.createEmbeddedView(this.template);
-      this.body.createEmbeddedView(this.template);
+      this.fixTable();
     }
 
+    ngAfterViewChecked()
+    {
+        
+    }
     
 
 
