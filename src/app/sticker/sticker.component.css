@@ -1,0 +1,20 @@
+#table-header{
+    position:relative;
+   
+}
+#table-header table{
+    position:relative;
+    width:100%;
+    
+}
+
+#table-body{
+    height:300px;
+    width: 250px;
+    overflow: scroll;    
+}
+#table-body table{
+    width:100%;
+    position:relative;
+    top: -25px;
+}

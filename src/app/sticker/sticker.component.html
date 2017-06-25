@@ -1,3 +1,47 @@
-<p>
-  sticker works!
-</p>
+
+<div style="overflow:hidden; height:25px; width: 250px;">
+  <div id="table-header" [style.left]="-tgxScroller + 'px'">
+    <div #header ></div>
+  </div>
+</div>
+<div id="table-body" (scroll)="onScroll($event)">
+  <div #body></div>
+</div>
+
+
+<ng-template #clone>
+        
+          <table>
+            <thead>
+              <tr>
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+                <th>Lorem.</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>                
+                <td>{{employee.name}}</td>                
+                <td>{{employee.city}}</td>                
+                <td>{{employee.address}}</td>                
+                <td>{{employee.col1}}</td>                
+                <td>{{employee.col2}}</td>                
+                <td>{{employee.col3}}</td>                
+                <td>{{employee.timein}}</td>                
+                <td>{{employee.timeout}}</td>                
+              </tr>             
+          </table>
+
+</ng-template>
+ 
+
+     
+
+      
